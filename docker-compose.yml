@@ -1,9 +1,6 @@
 version: '3'
 services:
   todo_frontend:
-    build:
-      context: ./front_end
-      dockerfile: ./Dockerfile
     container_name: todo_frontend
     restart: unless-stopped
     networks:
