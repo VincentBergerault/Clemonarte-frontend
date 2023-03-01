@@ -1,20 +1,20 @@
 version: '3'
 services:
-  todo_frontend:
+  clemonarte_frontend:
     build:
       context: .
-    container_name: todo_frontend
+    container_name: clemonarte_frontend
     restart: unless-stopped
     networks:
       - traefik_network
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_network"
-      - "traefik.http.routers.todo_frontend.entrypoints=web,websecure"
-      - "traefik.http.routers.todo_frontend.rule=Host(`${TODO_FRONTEND_URL}`)"
-      - "traefik.http.services.todo_frontend.loadbalancer.server.port=8080"
-      - "traefik.http.routers.todo_frontend.tls=true"
-      - "traefik.http.routers.todo_frontend.tls.certresolver=leresolver"
+      - "traefik.http.routers.clemonarte_frontend.entrypoints=web,websecure"
+      - "traefik.http.routers.clemonarte_frontend.rule=Host(`${CLEMONARTE_FRONTEND_URL}`)"
+      - "traefik.http.services.clemonarte_frontend.loadbalancer.server.port=8080"
+      - "traefik.http.routers.clemonarte_frontend.tls=true"
+      - "traefik.http.routers.clemonarte_frontend.tls.certresolver=leresolver"
 
 networks:
   traefik_network:
