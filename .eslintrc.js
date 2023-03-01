@@ -1,6 +1,11 @@
 module.exports = {
-    extends: ["@widget-lab/eslint-config-widgetlab/widget-vue", "prettier", "plugin:vue/vue3-recommended"],
+    extends: [
+        "eslint:recommended","prettier",
+        "plugin:prettier/recommended",
+        "plugin:vue/vue3-recommended"
+    ],
     parserOptions: {
+        ecmaVersion: 2015,
         ecmaFeatures: {
             jsx: true
         },

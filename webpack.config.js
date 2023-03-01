@@ -17,8 +17,8 @@ const { VuetifyLoaderPlugin } = require("vuetify-loader");
 
 
 // use default public value ?
-const locUrl = new URL("http://localhost:8080/");
-const pubUrl = new URL("http://localhost:8080/");
+const locUrl = new URL("http://localhost:8080");
+const pubUrl = new URL("http://localhost:8080");
 let port = locUrl.port;
 if (!port) port = locUrl.protocol === "https:" ? 443 : 80;
 
@@ -34,8 +34,7 @@ const commonConfig = {
         rules: [
             {
                 test: /\.js$/,
-                // keep widget-lab dependencies
-                exclude: [new RegExp("node_modules\\" + path.sep + "(?!@widget-lab).*"), /src\/static/],
+                exclude: [ /src\/static/],
                 use: {
                     loader: "babel-loader",
                     options: {
@@ -67,13 +66,16 @@ const commonConfig = {
     ]
 };
 
-const prodConfig = {
+const prodConfig = merge(
+    commonConfig,
+    {
     mode: "production",
-    plugins: [new ESLintPlugin({ extensions: ["js", "vue"] })],
+    //plugins: [new ESLintPlugin({ extensions: ["js", "vue"] })],
     performance: {
         maxAssetSize: 1000000
     }
-};
+}
+);
 
 const devConfig = merge(
     commonConfig,
@@ -89,10 +91,10 @@ const devConfig = merge(
             // to prevent CORS issues
             headers: { "Access-Control-Allow-Origin": "*" },
             writeToDisk: true,
-
             // these options are computed from localUrl and publicUrl global parameters
             port,
             host: locUrl.hostname,
+            open: ['http://locahost:8080'],
             public: pubUrl.href,
             sockPath: locUrl.pathname + "sockjs-node"
         },
@@ -105,20 +107,7 @@ const devConfig = merge(
                 "process.env.devVariables": JSON.stringify({ vue: { useExternalDebugger: false } })
             })
         ]
-    },
-    {
-        // in this section you can override webpack dev options (base configuration from webpack.config.dev.js)
-        // please refer to https://webpack.js.org/configuration/ for global webpack configuration
-        // please refer to https://webpack.js.org/configuration/dev-server/ for devServer
-
-        devServer: {
-            // TODO uncomment these lines if you want to serve https
-            // https: {
-            //     key: fs.readFileSync("path/to/mkcert/files/localhost+3-key.pem"),
-            //     cert: fs.readFileSync("path/to/mkcert/files/localhost+3.pem")
-            // }
-        }
-    },
+    }
 );
 
 const vueConf = {
@@ -127,6 +116,7 @@ const vueConf = {
     },
     plugins: [new VueLoaderPlugin()]
 };
+
 const vuetifyConf = {
     module: {
         rules: [
@@ -175,5 +165,5 @@ const vuetifyConf = {
 module.exports = [
     { name: "dev", ...merge(devConfig, vueConf, vuetifyConf) },
     // { name: "devS3", ...merge(devS3Conf, vueConf, vuetifyConf, myConf) },
-    // { name: "prod", ...merge(prodConfig,CommonConfig, vueConf, vuetifyConf) }
+    { name: "prod", ...merge(prodConfig, vueConf, vuetifyConf) }
 ];

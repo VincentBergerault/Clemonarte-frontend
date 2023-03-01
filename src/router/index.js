@@ -50,10 +50,7 @@ export default new Router({
           name:'Cart'
         }*/
       ]
-
     }
   ],
-    mode:'history'
-},
-
-  )
+  mode:'history'
+})
