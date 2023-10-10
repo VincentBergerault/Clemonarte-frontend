@@ -1,20 +1,17 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar
-:clipped-left="$vuetify.breakpoint.lgAndUp" app
-color="#E98499"
->
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#E98499">
       <v-toolbar-title style="width: 350px">
         <div style="float: left">
-          <v-img
-src="../static/images/logo.png" height="50px"
-width="50px"
-/>
+          <v-img src="../static/images/logo.png" height="50px" width="50px" />
         </div>
         <a
-class="white--text" style="text-decoration: none" text-align="center"
-          >&nbsp;Clemonart</a
+          class="white--text"
+          style="text-decoration: none"
+          text-align="center"
         >
+          &nbsp;Clemonart
+        </a>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -25,7 +22,7 @@ class="white--text" style="text-decoration: none" text-align="center"
         class="hidden-sm-and-down pl-10 ml-4"
       />
     </v-app-bar>
-    <br>
+    <br />
     <v-content />
 
     <router-view />
@@ -37,14 +34,14 @@ class="white--text" style="text-decoration: none" text-align="center"
         width="100%"
         style="background-color: #e98499; text-align: center"
       >
-        <br>
+        <br />
         <v-card-text class="white--text pt-0">
           This Website is currently a non profit website, it's only purpose is
           to represent the art of Clemonart and to provide a proper gallery.
-          <br>
+          <br />
           In a not so far future, this website will be able to provide prices
           for the paintings, via Paypal by contacting the artist Clemonart.
-          <br>
+          <br />
           Thank you for your understanding.
         </v-card-text>
       </v-card>
@@ -54,18 +51,9 @@ class="white--text" style="text-decoration: none" text-align="center"
 
 <script>
 export default {
-  name: "Layout",
+  name: "LayoutComponent",
   data() {
-    return {
-      items: [
-        { title: "T-Shirts" },
-        { title: "Jackets" },
-        { title: "Shirts" },
-        { title: "Jeans" },
-        { title: "Shoes" },
-      ],
-      activeBtn: 1,
-    };
+    return {};
   },
 };
 </script>

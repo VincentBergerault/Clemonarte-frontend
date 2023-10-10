@@ -9,10 +9,7 @@
             class="col-md-3 col-sm-6 col-xs-12"
           >
             <v-hover>
-              <v-card
-class="mx-auto" color="grey lighten-4"
-max-width="600"
->
+              <v-card class="mx-auto" color="grey lighten-4" max-width="600">
                 <v-img
                   class="white--text align-end"
                   :aspect-ratio="16 / 9"
@@ -37,7 +34,7 @@ max-width="600"
 
 <script>
 export default {
-  name: "Shop",
+  name: "ShopComponent",
   data: () => ({
     range: [0, 10000],
     select: "Popularity",
@@ -176,9 +173,9 @@ export default {
         name: "Elephant",
         price: "34.00",
         src: "../static/images/shop/dessin18.png",
-      }
-    ]
-  })
+      },
+    ],
+  }),
 };
 </script>
 <style>
