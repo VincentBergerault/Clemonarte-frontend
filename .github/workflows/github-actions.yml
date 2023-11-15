@@ -12,7 +12,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          script: | 
+          script: |
             pwd
             if [ ! -d "./Clemonarte" ]
             then
