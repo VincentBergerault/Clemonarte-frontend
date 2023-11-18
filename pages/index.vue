@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container>
+    <!-- <v-container>
       <div class="row">
         <div class="row text-center">
           <div
@@ -28,11 +28,21 @@
           </div>
         </div>
       </div>
-    </v-container>
+    </v-container> -->
+
+    <v-btn @click="store.CreateProduct()"> create </v-btn>
+    <br />
+    <br />
+    <br />
+    <!-- {{ products }} -->
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useMainStore } from "~/store/index";
+const store = useMainStore();
+// const products = store.LoadProducts()
+</script>
 <style>
 .v-card--reveal {
   align-items: center;

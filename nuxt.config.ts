@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
@@ -22,6 +21,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  runtimeConfig: {
+    mongoUrl: process.env.MONGO_URL,
+  },
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -29,9 +31,9 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }));
       });
     },
-    // ...
+    '@pinia/nuxt'
   ],
-  pinia: {
-    storesDirs: ["~/stores/**", "#/stores/**", "@/stores/**"],
+  nitro: {
+    plugins: ["~/server/index.ts"],
   },
 });
