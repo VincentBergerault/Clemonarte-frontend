@@ -1,21 +1,12 @@
 <template>
   <div>
-    <!-- <v-container>
+    <v-container>
       <div class="row">
         <div class="row text-center">
-          <div
-            v-for="pro in products"
-            :key="pro.id"
-            class="col-md-3 col-sm-6 col-xs-12"
-          >
+          <div v-for="pro in store.products" :key="pro.name.toString()" class="col-md-3 col-sm-6 col-xs-12">
             <v-hover>
               <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-                <v-img
-                  class="white--text align-end"
-                  :aspect-ratio="16 / 9"
-                  height="200px"
-                  :src="pro.src"
-                />
+                <img class="white--text align-end" :aspect-ratio="16 / 9" :src="pro.src.toString()" />
                 <v-card-text class="text--primary">
                   <div>
                     <p style="text-decoration: none">
@@ -28,21 +19,20 @@
           </div>
         </div>
       </div>
-    </v-container> -->
+    </v-container>
 
     <v-btn @click="store.CreateProduct()"> create </v-btn>
     <br />
     <br />
     <br />
-    <!-- {{ products }} -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useMainStore } from "~/store/index";
 const store = useMainStore();
-// const products = store.LoadProducts()
 </script>
+
 <style>
 .v-card--reveal {
   align-items: center;
