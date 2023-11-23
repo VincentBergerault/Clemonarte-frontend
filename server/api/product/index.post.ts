@@ -12,8 +12,9 @@ export default defineEventHandler(async (event) => {
   const newUserData = await Product.create({
     name, price, src
   });
+
   return {
     id: newUserData._id,
-    name: newUserData.name,
+    name: newUserData.name
   };
 });

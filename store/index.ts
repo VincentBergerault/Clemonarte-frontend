@@ -1,4 +1,3 @@
-
 interface MyStoreState {
   products: Array<Product> | null;
 }
@@ -14,8 +13,7 @@ import { defineStore } from "pinia";
 export const useMainStore = defineStore("main", {
   state: (): MyStoreState => ({
     products: []
-  })
-  ,
+  }),
   actions: {
     async LoadProducts() {
       const { data } = await useFetch("/api/product");
@@ -25,7 +23,7 @@ export const useMainStore = defineStore("main", {
       }
     },
     async CreateProduct() {
-      const { data } = await useFetch("/api/product", {
+      await useFetch("/api/product", {
         method: "POST",
         body: JSON.stringify({
           id: 1,
@@ -36,9 +34,9 @@ export const useMainStore = defineStore("main", {
       });
     },
   },
-  getters: {
-  },
+  getters: {},
 });
+
 // Call to server
 // this.products = [
 //   {
