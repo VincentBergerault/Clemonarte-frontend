@@ -10,7 +10,6 @@
       </div>
     </v-container>
 
-    <v-btn @click="store.CreateProduct()"> create </v-btn>
     <br />
     <br />
     <br />
