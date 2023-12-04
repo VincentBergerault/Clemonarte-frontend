@@ -6,13 +6,13 @@ interface Product {
   name: String;
   price: Number;
   src: String;
-};
+}
 
 import { defineStore } from "pinia";
 
 export const useMainStore = defineStore("main", {
   state: (): MyStoreState => ({
-    products: []
+    products: [],
   }),
   actions: {
     async LoadProducts() {
@@ -70,4 +70,3 @@ export const useMainStore = defineStore("main", {
 //     src: "../assets/images/dessins/dessin5.png",
 //   },
 // ];
-
