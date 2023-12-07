@@ -1,14 +1,13 @@
-interface MyStoreState {
-  products: Array<Product> | null;
-}
+import { defineStore } from "pinia";
 
-interface Product {
+type Product = {
   name: String;
   price: Number;
   src: String;
-}
-
-import { defineStore } from "pinia";
+};
+type MyStoreState = {
+  products: Array<Product> | null;
+};
 
 export const useMainStore = defineStore("main", {
   state: (): MyStoreState => ({
