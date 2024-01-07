@@ -36,4 +36,10 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ["~/server/index.ts"],
   },
+  components: [
+    {
+      path: "~/components", // will get any components nested in let's say /components/test too
+      pathPrefix: false,
+    },
+  ],
 });

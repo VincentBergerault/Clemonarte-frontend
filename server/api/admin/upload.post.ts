@@ -1,11 +1,4 @@
 import { writeFile } from "fs/promises";
-import { Product } from "~/server/models/product.model";
-
-interface IRequestBody {
-  name: String;
-  price: Number;
-  src: String;
-}
 
 export default defineEventHandler(async (event) => {
   const files = await readMultipartFormData(event);
@@ -25,7 +18,6 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  console.log(files[0]);
   if (files[0].name === "file") {
     const filename = files[0].filename;
     //   const mimetype = files[i].type;

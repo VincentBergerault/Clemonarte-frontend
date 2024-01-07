@@ -1,10 +1,6 @@
 import { defineStore } from "pinia";
+import type { Product } from "~/utils/types";
 
-type Product = {
-  name: String;
-  price: Number;
-  src: String;
-};
 type MyStoreState = {
   products: Array<Product> | null;
 };

@@ -163,7 +163,7 @@ const onSubmit = async () => {
         name: name.value,
         description: description.value,
         price: price.value,
-        selectedType: selectedType.value,
+        type: selectedType.value,
         src: imgData.value.filePath,
       },
     });

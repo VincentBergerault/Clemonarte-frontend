@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div class="title">
-      <h2>Print</h2>
-    </div>
+    <h1>Prints</h1>
+    <ProductGrid :products="prints" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+import { computed } from "vue";
+import { useMainStore } from "~/store/index";
+const store = useMainStore();
+
+const prints = computed(() => {
+  return store.products.filter((product) => product.type === "print");
+});
+</script>
+
+<style></style>

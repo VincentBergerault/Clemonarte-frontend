@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div class="title">
-      <h2>Bookmark</h2>
-    </div>
+    <h1>Bookmark</h1>
+    <ProductGrid :products="bookmarks" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+import { computed } from "vue";
+import { useMainStore } from "~/store/index";
+const store = useMainStore();
+
+const bookmarks = computed(() => {
+  return store.products.filter((product) => product.type === "bookmark");
+});
+</script>
+
+<style></style>

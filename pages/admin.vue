@@ -5,6 +5,8 @@
       v-show="showAddProductModal"
       @close-modal="showAddProductModal = false"
     />
+
+    <CarouselComponent />
   </div>
 </template>
 
