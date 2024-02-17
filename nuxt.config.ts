@@ -22,7 +22,9 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   runtimeConfig: {
-    mongoUrl: process.env.MONGO_URL,
+    public: {
+      apiBase: process.env.BACKEND_URL,
+    },
   },
   modules: [
     (_options, nuxt) => {
@@ -33,9 +35,6 @@ export default defineNuxtConfig({
     },
     "@pinia/nuxt",
   ],
-  nitro: {
-    plugins: ["~/server/index.ts"],
-  },
   components: [
     {
       path: "~/components", // will get any components nested in let's say /components/test too
