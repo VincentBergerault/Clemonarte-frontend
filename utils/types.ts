@@ -1,6 +1,6 @@
 export type Product = {
-  name: String;
+  name: string;
   price: Number;
-  type: String;
-  src: String;
+  type: string;
+  src: string;
 };

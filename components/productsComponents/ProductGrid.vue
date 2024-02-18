@@ -4,16 +4,29 @@
       v-for="product in products"
       :key="product.name.toString()"
       :product="product"
+      @click="openModal(product)"
+    />
+    <ProductDetailModal
+      v-if="selectedProduct"
+      :product-data="selectedProduct"
+      :show="showModal"
+      @update:show="showModal = $event"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Product } from "~/utils/types";
-
 defineProps({
   products: { type: Array<Product>, required: true },
 });
+
+const selectedProduct = ref<Product | null>(null);
+const showModal = ref(false);
+
+function openModal(product: Product) {
+  selectedProduct.value = product;
+  showModal.value = true;
+}
 </script>
 
 <style>
