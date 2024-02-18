@@ -11,14 +11,14 @@ export const useMainStore = defineStore("main", {
   }),
   actions: {
     async LoadProducts() {
-      const { data } = await useFetch("/api/product");
+      const { data } = await useApiFetch("api/product");
 
       if (data.value) {
-        this.products = data.value.products as Array<Product>;
+        this.products = data.value as Array<Product>;
       }
     },
     async CreateProduct() {
-      await useFetch("/api/product", {
+      await useApiFetch("api/product", {
         method: "POST",
         body: JSON.stringify({
           id: 1,

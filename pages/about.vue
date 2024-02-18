@@ -12,13 +12,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="image">
-          <img src="/images/mission-image.png" alt="Our Mission" />
+          <img :src="section1" alt="Our Mission" />
         </div>
       </section>
 
       <section class="content left-align">
         <div class="image">
-          <img src="/images/team-image.jpg" alt="Our Team" />
+          <img :src="section2" alt="Our Team" />
         </div>
         <div class="text">
           <h2>Our Team</h2>
@@ -38,7 +38,7 @@
           </p>
         </div>
         <div class="image">
-          <img src="/images/contact-image.jpg" alt="Contact" />
+          <img :src="section3" alt="Contact" />
         </div>
       </section>
     </div>
@@ -49,7 +49,10 @@
 export default {
   data() {
     return {
-      heroImage: "/images/me.jpg",
+      heroImage: "/images/contact/me.jpg",
+      section1: "/images/contact/mission-image.png",
+      section2: "/images/contact/team-image.jpg",
+      section3: "/images/contact/contact-image.jpg",
     };
   },
 };

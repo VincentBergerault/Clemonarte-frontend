@@ -152,12 +152,12 @@ const onSubmit = async () => {
   const formData = new FormData();
   formData.append("file", selectedFile.value as Blob);
 
-  const { data: imgData, error }: any = await useFetch("/api/admin/upload", {
+  const { data: imgData, error }: any = await useApiFetch("/api/admin/upload", {
     method: "post",
     body: formData,
   });
   if (!error) {
-    await useFetch("/api/product", {
+    await useApiFetch("/api/product", {
       method: "post",
       body: {
         name: name.value,

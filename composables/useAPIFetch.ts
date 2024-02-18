@@ -1,7 +1,5 @@
-export const useMyFetch: typeof useFetch = (path, options = {}) => {
+export const useApiFetch = async (url: string, options = {}) => {
   const config = useRuntimeConfig();
 
-  // modify options as needed
-  options.baseURL = config.public.baseUrl;
-  return useFetch(path, options);
+  return await useFetch(`${config.public.apiBase}/${url}`, options);
 };
