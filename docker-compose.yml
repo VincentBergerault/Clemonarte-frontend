@@ -5,6 +5,8 @@ services:
       context: .
     container_name: clemonarte_frontend
     restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     networks:
       - traefik_network
     environment:
