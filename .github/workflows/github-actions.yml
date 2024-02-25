@@ -17,6 +17,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
+          envs: CLEMONARTE_FRONTEND_URL, BACKEND_URL, FRONTEND_PORT
           script: |
             pwd
             if [ ! -d "./Clemonarte-frontend" ]
