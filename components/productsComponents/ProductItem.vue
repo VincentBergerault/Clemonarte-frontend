@@ -48,6 +48,7 @@ defineProps({
   flex-direction: column;
   overflow: hidden; /* Ensures that the image and overlay do not bleed outside the card */
   border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
 }
 
 .product-image {

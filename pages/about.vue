@@ -12,13 +12,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="image">
-          <img :src="section1" alt="Our Mission" />
+          <img :src="section1" alt="Our Mission" class="round-image" />
         </div>
       </section>
 
       <section class="content left-align">
         <div class="image">
-          <img :src="section2" alt="Our Team" />
+          <img :src="section2" alt="Our Team" class="round-image" />
         </div>
         <div class="text">
           <h2>Our Team</h2>
@@ -38,7 +38,7 @@
           </p>
         </div>
         <div class="image">
-          <img :src="section3" alt="Contact" />
+          <img :src="section3" alt="Contact" class="round-image" />
         </div>
       </section>
     </div>
@@ -109,9 +109,17 @@ export default {
   text-align: left;
 }
 
-.content .image img {
+.content {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+.round-image {
+  border-radius: 50%;
+  object-fit: cover;
+
+  width: 400px;
+  height: 400px; /* Example height, should be equal to width for a perfect circle */
 }
 </style>

@@ -79,15 +79,15 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   padding: 40px;
-  background-color: #f3f4f6;
+  background-color: rgb(var(--v-theme-lightgrey));
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(var(--v-theme-black), 0.1);
   text-align: center;
 }
 
 .contact-form h1 {
   margin-bottom: 30px;
-  color: #333;
+  color: rgb(var(--v-theme-dark-lighten-1));
 }
 
 .contact-form .input-group {
@@ -102,8 +102,8 @@ export default {
   border-radius: 5px;
   margin-top: 8px;
   box-sizing: border-box;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(var(--v-theme-white));
+  box-shadow: 0 2px 4px rgba(var(--v-theme-black), 0.1);
 }
 
 .contact-form textarea {
@@ -116,7 +116,7 @@ export default {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: rgb(var(--v-theme-secondary));
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -124,6 +124,6 @@ export default {
 }
 
 .contact-form .submit-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(var(--v-theme-secondary-lighten-2));
 }
 </style>

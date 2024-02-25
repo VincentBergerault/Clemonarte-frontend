@@ -1,18 +1,25 @@
 <template>
-  <v-dialog v-model="show" persistent max-width="800px">
+  <v-dialog
+    v-model="show"
+    persistent
+    max-width="800px"
+    @click:outside="closeModal"
+  >
     <v-card>
-      <v-card-title>{{ productData?.name }}</v-card-title>
+      <v-card-title class="d-none"></v-card-title>
+      <!-- Hide default title -->
       <v-card-text>
-        <v-container>
+        <v-container fluid>
           <v-row>
             <v-col cols="12" md="6">
-              <v-img :src="productData.src" aspect-ratio="1.5"></v-img>
+              <v-img :src="productData?.src" aspect-ratio="1"></v-img>
             </v-col>
-            <v-col cols="12" md="6">
-              <div class="mb-2">
+            <v-col cols="12" md="6" class="product-details">
+              <h2 class="product-title">{{ productData?.name }}</h2>
+              <div class="price mb-2">
                 <h2>{{ productData?.price }}</h2>
               </div>
-              <div class="mb-2">
+              <div class="type mb-2">
                 <h3>Type</h3>
                 <p>{{ productData?.type }}</p>
               </div>
@@ -23,7 +30,10 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" @click="closeModal">Close</v-btn>
+        <v-btn color="blue darken-1" @click="closeModal">Close</v-btn
+        ><v-btn color="green darken-1" @click="commanderAction"
+          >Commander</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -54,11 +64,42 @@ watch(
 
 // Function to close the modal and emit event
 const closeModal = () => {
-  show.value = false;
   emit("update:show", false);
+  show.value = false;
+};
+
+const commanderAction = () => {
+  console.log("Commander action initiated");
+  // Implement your action here
 };
 </script>
 
 <style scoped>
-/* Add styles specific to this component as needed */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.price h2 {
+  color: #4a90e2; /* Example blue color for the price */
+  font-weight: 500;
+}
+
+.type h3 {
+  margin-top: 20px;
+  font-weight: normal;
+  color: #333; /* Dark grey for type title */
+}
+
+.type p {
+  font-size: 16px;
+  color: #666; /* Lighter grey for type description */
+}
 </style>

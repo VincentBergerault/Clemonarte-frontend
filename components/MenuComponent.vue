@@ -52,8 +52,8 @@ export default {
 .dropbtn {
   display: block;
   width: 150px !important;
-  background-color: #a8e6cf; /* Light green background */
-  color: white; /* White text color */
+  /* background-color: rgb(var(--v-theme-tertiary)); Light green background */
+  /* color: white; White text color */
   border: none;
   border-radius: 5px; /* Rounded corners */
   cursor: pointer;
@@ -65,7 +65,7 @@ export default {
 
 /* Define a common class for all buttons to ensure uniform size */
 .button {
-  background-color: #a8e6cf; /* Light green background */
+  background-color: rgb(var(--v-theme-secondary)); /* Light green background */
   color: white; /* White text color */
   padding: 10px 20px;
   border: none;
@@ -83,7 +83,9 @@ export default {
 }
 
 .button:hover {
-  background-color: #00bcd4; /* Light blue color for hover effect */
+  background-color: rgb(
+    var(--v-theme-secondary-lighten-2)
+  ); /* Light blue color for hover effect */
   transform: translateY(-2px); /* Slight raise effect on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
@@ -98,8 +100,10 @@ export default {
   position: absolute;
   left: 0; /* Align with the left edge of the dropbtn */
   top: 100%; /* Position just below the dropbtn */
-  background-color: #f9f9f9; /* Light background for the dropdown */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgb(
+    var(--v-theme-secondary)
+  ); /* Light background for the dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(var(--v-theme-black), 0.1);
   z-index: 1;
   border-radius: 5px; /* Rounded corners */
   overflow: hidden; /* To respect border radius */
@@ -108,7 +112,7 @@ export default {
 }
 
 .dropdown-content a {
-  color: black;
+  color: rgb(var(--v-theme-white));
   padding: 10px 20px; /* Match the padding of the buttons */
   text-decoration: none;
   display: block;
@@ -117,7 +121,9 @@ export default {
 }
 
 .dropdown-content a:hover {
-  background-color: #a8e6cf; /* Light green background for hover */
+  background-color: rgb(
+    var(--v-theme-secondary-lighten-2)
+  ); /* Light green background for hover */
 }
 
 .dropdown:hover .dropdown-content {

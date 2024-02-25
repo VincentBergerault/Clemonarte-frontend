@@ -1,12 +1,11 @@
 <template>
-  <header class="custom-header">
+  <header class="custom-header bg-primary">
     <MenuComponent />
   </header>
 </template>
 
 <style scoped>
 .custom-header {
-  background-color: #e98499;
   padding: 10px;
   display: flex;
   justify-content: center; /* This will center the MenuComponent */

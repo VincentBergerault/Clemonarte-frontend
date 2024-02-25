@@ -35,7 +35,7 @@ const store = useMainStore();
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  /* border: 1px solid rgb(var(--v-theme-lightgrey-darken-2)); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer bg-primary">
     This Website is currently a non profit website, it's only purpose is to
     represent the art of Clemonart and to provide a proper gallery.
     <br />
@@ -12,7 +12,6 @@
 
 <style>
 .footer {
-  background-color: #e98499;
   text-align: center;
   width: "100%";
   padding: 10px;

@@ -27,7 +27,7 @@ const store = useMainStore();
 
 <style>
 .portfolio {
-  background-color: #f5f5f5; /* Base background color */
+  background-color: rgb(var(--v-theme-lightgrey)); /* Base background color */
 }
 
 .portfolio-item {
@@ -39,12 +39,12 @@ const store = useMainStore();
 }
 
 .left-align {
-  background-color: #eef2f7;
+  background-color: rgba(var(--v-theme-white-darken-1), 0.7);
 }
 
 .right-align {
   flex-direction: row-reverse;
-  background-color: #dde1e7;
+  background-color: rgb(var(--v-theme-lightgrey-darken-2));
 }
 
 .image-container {
