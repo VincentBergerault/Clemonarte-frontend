@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: launch Docker-compose
         uses: appleboy/ssh-action@master
+        env:
+          BACKEND_URL: ${{ env.BACKEND_URL }}
+          CLEMONARTE_FRONTEND_URL: ${{ env.CLEMONARTE_FRONTEND_URL }}
+          FRONTEND_PORT: ${{ env.FRONTEND_PORT }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}

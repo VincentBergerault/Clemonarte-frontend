@@ -12,7 +12,7 @@ services:
       - "traefik.docker.network=traefik_network"
       - "traefik.http.routers.clemonarte_frontend.entrypoints=web,websecure"
       - "traefik.http.routers.clemonarte_frontend.rule=Host(`${CLEMONARTE_FRONTEND_URL}`)"
-      - "traefik.http.services.clemonarte_frontend.loadbalancer.server.port=8080"
+      - "traefik.http.services.clemonarte_frontend.loadbalancer.server.port=${FRONTEND_PORT}"
       - "traefik.http.routers.clemonarte_frontend.tls=true"
       - "traefik.http.routers.clemonarte_frontend.tls.certresolver=leresolver"
 

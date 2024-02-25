@@ -41,4 +41,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  server: {
+    port: process.env.FRONTEND_PORT, // par défaut: 3000
+  },
 });
