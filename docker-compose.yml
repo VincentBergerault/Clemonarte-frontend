@@ -7,6 +7,9 @@ services:
     restart: unless-stopped
     networks:
       - traefik_network
+    environment:
+      - BACKEND_URL=${BACKEND_URL}
+      - FRONTEND_PORT=${FRONTEND_PORT}
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_network"
