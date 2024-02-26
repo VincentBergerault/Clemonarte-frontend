@@ -19,6 +19,9 @@ jobs:
           port: ${{ secrets.PORT }}
           envs: CLEMONARTE_FRONTEND_URL, BACKEND_URL, PORT
           script: |
+            echo "CLEMONARTE_FRONTEND_URL : $CLEMONARTE_FRONTEND_URL"
+            echo "BACKEND_URL : $BACKEND_URL"
+            echo "PORT : $PORT"
             pwd
             if [ ! -d "./Clemonarte-frontend" ]
             then
