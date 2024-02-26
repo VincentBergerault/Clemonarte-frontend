@@ -11,13 +11,13 @@ jobs:
         env:
           CLEMONARTE_FRONTEND_URL: ${{ vars.CLEMONARTE_FRONTEND_URL }}
           BACKEND_URL: ${{ vars.BACKEND_URL }}
-          FRONTEND_PORT: ${{ vars.FRONTEND_PORT }}
+          PORT: ${{ vars.PORT }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          envs: CLEMONARTE_FRONTEND_URL, BACKEND_URL, FRONTEND_PORT
+          envs: CLEMONARTE_FRONTEND_URL, BACKEND_URL, PORT
           script: |
             pwd
             if [ ! -d "./Clemonarte-frontend" ]
