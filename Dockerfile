@@ -1,4 +1,7 @@
-FROM node:latest
+FROM node:18
+
+ARG BACKEND_URL
+ENV BACKEND_URL ${BACKEND_URL}
 
 WORKDIR /usr/myapp/
 COPY package*.json ./
