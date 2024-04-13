@@ -3,6 +3,8 @@ services:
   clemonarte_frontend:
     build:
       context: .
+      args:
+        - BACKEND_URL=${BACKEND_URL}
     container_name: clemonarte_frontend
     restart: unless-stopped
     ports:
