@@ -32,7 +32,7 @@ function openModal(product: Product) {
 <style>
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 items in a row */
+  grid-template-columns: repeat(3, 1fr); /* 4 items in a row */
   gap: 16px; /* Adjust the gap as needed */
 }
 </style>
