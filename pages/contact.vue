@@ -2,7 +2,7 @@
   <div class="contact-form-container">
     <h1>Contact Us!</h1>
 
-    <form class="contact-form" @submit.prevent="handleSubmit">
+    <div class="contact-form">
       <div class="input-group">
         <input
           v-model="form.name"
@@ -32,8 +32,10 @@
         ></textarea>
       </div>
 
-      <button type="submit" class="submit-button">Send Message</button>
-    </form>
+      <button class="submit-button" @click="submitContact()">
+        Send Message
+      </button>
+    </div>
   </div>
 </template>
 
@@ -52,23 +54,23 @@ export default {
     };
   },
   methods: {
-    handleSubmit: function () {
-      const formData = new FormData();
-
-      for (const [key, value] of Object.entries(this.form)) {
-        formData.append(key, value);
+    submitContact: async function () {
+      try {
+        await useApiFetch("api/contact", {
+          method: "POST",
+          body: JSON.stringify(this.form),
+        });
+        alert("Message sent successfully!");
+        // Optionally, reset the form fields after successful submission
+        this.form.name = "";
+        this.form.email = "";
+        this.form.message = "";
+      } catch (error) {
+        console.error("Error sending message:", error);
+        alert(
+          "An error occurred while sending the message. Please try again later."
+        );
       }
-
-      //   await axios
-      //     .post("{Formeezy-Endpoint}", formData)
-      //     .then(({ data }) => {
-      //       const { redirect } = data;
-      //       // Redirect used for reCAPTCHA and/or thank you page
-      //       window.location.href = redirect;
-      //     })
-      //     .catch((e) => {
-      //       window.location.href = e.response.data.redirect;
-      //     });
     },
   },
 };
