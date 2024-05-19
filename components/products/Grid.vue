@@ -1,12 +1,12 @@
 <template>
   <div class="products-grid">
-    <ProductItem
+    <ProductsItem
       v-for="product in products"
       :key="product.name.toString()"
       :product="product"
       @click="openModal(product)"
     />
-    <ProductDetailModal
+    <ProductsDetailModal
       v-if="selectedProduct"
       :product-data="selectedProduct"
       :show="showModal"

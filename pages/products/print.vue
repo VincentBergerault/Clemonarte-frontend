@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Prints</h1>
-    <ProductGrid :products="prints" />
+    <ProductsGrid :products="prints" />
   </div>
 </template>
 

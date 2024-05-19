@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <AppHeader />
+    <GlobalAppHeader />
     <div class="slot-container">
       <slot />
     </div>
-    <AppFooter />
+    <GlobalAppFooter />
   </div>
 </template>
 
