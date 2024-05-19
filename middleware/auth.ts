@@ -1,13 +1,15 @@
-export default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware(async (to, from) => {
   // isAuthenticated() is an example method verifying if a user is authenticated
-  if (isAuthenticated() === false) {
-    return navigateTo("/login");
+  if ((await isAuthenticated()) === false) {
+    return navigateTo("/admin/login");
   }
-
-  // https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o
-  console.log("From auth middleware");
 });
 
-function isAuthenticated(): boolean {
-  return true;
+async function isAuthenticated(): Promise<boolean> {
+  try {
+    await useApiFetch("/auth/verify-token");
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
