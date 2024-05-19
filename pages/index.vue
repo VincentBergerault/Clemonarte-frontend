@@ -8,7 +8,7 @@
           :key="product.name.toString()"
           class="product-card"
         >
-          <ProductItem :product="product"></ProductItem>
+          <ProductsItem :product="product" />
         </div>
       </div>
     </v-container>
@@ -45,8 +45,7 @@ const store = useMainStore();
   margin: 0 auto; /* Center in grid cell */
 }
 
-/* Styling for ProductItem, if needed */
-.product-card > ProductItem {
+.product-card > ProductsItem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
