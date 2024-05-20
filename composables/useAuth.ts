@@ -18,22 +18,22 @@ export function useAuth() {
 
   const login = async (credentials: Credentials) => {
     try {
-      await useApiFetch("/auth/login", {
+      await useApiFetch("admin/login", {
         method: "POST",
         body: credentials,
       });
       router.push("/admin/admin");
-    } catch (error) {
-      console.error("Login failed", error);
+    } catch (error: any) {
+      router.push("/admin/login");
     }
   };
 
   const logout = async () => {
     try {
-      await useApiFetch("/auth/logout");
+      await useApiFetch("admin/logout");
       router.push("/admin/login"); // Redirecting to the login page
-    } catch (error) {
-      console.error("Logout failed", error);
+    } catch (error: any) {
+      router.push("/admin/login"); // Redirecting to the login page
     }
   };
 

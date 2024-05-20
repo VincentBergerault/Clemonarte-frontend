@@ -2,6 +2,7 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: true,
   vite: {
     css: {
       preprocessorOptions: {
